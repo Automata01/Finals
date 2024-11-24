@@ -1,0 +1,974 @@
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/******************************Set Variable******************************/
+:root {
+    /*Font Style*/
+    --font-primary: "Grand Hotel", cursive;
+    ;
+    --font-secondary: "Poppins", sans-serif;
+
+    /*Colors*/
+    --colorbrown: #a84d14;
+    --coloryellow: #e9d66b;
+
+    --colororange: #e4681b;
+    --colordarkbrown: #72340d;
+
+    --colorcream: #f2e6a6;
+    --cologoldblack: #6f6111;
+
+    --colorError: #DC343B;
+    --colorCorrect: #03C03C;
+
+    --colorOnblack: #343a3d;
+    --colorOnwhite: whitesmoke;
+
+    --colorBlack: black;
+    --colorWhite: white;
+}
+
+
+body {
+    background-color: var(--colorOnwhite);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.logo {
+    position: absolute;
+    top: -10px;
+    width: 60px;
+    margin: 5px 0px 0px 50px;
+}
+
+nav {
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    transition: 0.5s ease;
+}
+
+nav.scrolled {
+    box-shadow: 1px 1px 20px rgba(53, 53, 53, 0.2);
+    background-color: whitesmoke;
+}
+
+nav ul {
+    float: right;
+    margin-right: 50px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 16px 5px;
+}
+
+nav ul li a {
+    color: var(--colorOnblack);
+    font-size: 14px;
+    padding: 7px 15px;
+    font-weight: 600;
+    border-radius: 3px;
+    font-family: var(--font-secondary);
+    transition: 0.5s ease;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: rgb(182, 182, 182);
+}
+
+.checkbtn {
+    font-size: 20px;
+    color: var(--clr-100);
+    float: right;
+    cursor: pointer;
+    display: none;
+    margin: 3.7px 7px;
+    padding: 10px 12px;
+}
+
+.btn-shop {
+    font-size: 20px;
+    color: var(--clr-100);
+    float: right;
+    cursor: pointer;
+    display: none;
+    margin: 3.7px 7px;
+    padding: 10px 12px;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.button-sign {
+    position: relative;
+    left: -30px;
+    background-color: var(--colorBlack);
+    border-radius: 50px;
+    color: var(--colorOnwhite);
+    cursor: pointer;
+    font-weight: 600;
+    padding: 9px 20px 8px;
+    text-align: center;
+    touch-action: manipulation;
+}
+
+.button-login:hover {
+    background-color: var(--colorOnblack);
+    color: var(--colorWhite);
+}
+
+.button-login {
+    background-color: var(--colorbrown);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    color: var(--colorWhite);
+    cursor: pointer;
+    position: relative;
+    font-weight: 600;
+    padding: 9px 25px 8px;
+    text-align: center;
+    touch-action: manipulation;
+}
+
+.button-31:hover,
+.button-31:focus {
+    opacity: .75;
+}
+
+#home {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-container {
+    position: relative;
+    top: -50px;
+    text-align: center;
+    width: 50%;
+    height: auto;
+}
+
+.home-container h1 {
+    font-size: 120px;
+    font-family: var(--font-primary);
+}
+
+.home-container p {
+    position: relative;
+    top: 10px;
+    color: var(--colorOnblack);
+    font-size: 19px;
+    font-family: var(--font-secondary);
+}
+
+.btn-order {
+    position: relative;
+    top: 50px;
+    font-size: 15px;
+    border-radius: 50px;
+    font-family: var(--font-secondary);
+    padding: 10px 25px;
+    font-weight: 500;
+    background-color: var(--colordarkbrown);
+    color: var(--colorOnwhite);
+}
+
+.btn-order:hover{
+    background-color: var(--colorbrown);
+}
+
+.bestSell-conatiner {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    height: 300px;
+    overflow: hidden;
+}
+
+/* Main Slider */
+.slider {
+    position: relative;
+    top: 70px;
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    perspective: 100px;
+    animation: moving 40s linear infinite;
+    animation-play-state: running;
+    /* Ensures it starts animating */
+}
+
+.slider:hover {
+    animation-play-state: paused;
+    /* Pauses animation on hover */
+}
+
+/* Animation Keyframes */
+@keyframes moving {
+    0% {
+        transform: translateX(860px);
+    }
+
+    100% {
+        transform: translateX(calc(-200px * 9));
+        /* Adjust as needed */
+    }
+}
+
+/* Container Overlay Effects */
+.bestSell-conatiner {
+    overflow: hidden;
+    position: relative;
+    height: 320px;
+    width: 70%;
+
+}
+
+.bestSell-conatiner h2 {
+    position: relative;
+    top: 30px;
+    text-align: center;
+    z-index: 10;
+    font-family: var(--font-secondary);
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.bestSell-conatiner::before,
+.bestSell-conatiner::after {
+    background: linear-gradient(to right, rgba(245, 245, 245, 1) 0%, rgba(225, 225, 225, 0));
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 15%;
+    z-index: 2;
+}
+
+.bestSell-conatiner::before {
+    left: 0;
+    top: 0;
+}
+
+.bestSell-conatiner::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+.slide-item {
+    text-align: center;
+    width: 250px;
+    height: 200px;
+    transition: transform 0.3s ease;
+    /* Smooth transition on hover */
+}
+
+.slide-item p {
+    font-size: 17px;
+    font-family: var(--font-secondary);
+}
+
+
+/* Slide item and hover effect */
+.slide-item img {
+    position: relative;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    z-index: 5;
+
+}
+
+.slide-item:hover {
+    transform: scale(1.1);
+    /* Enlarges the image slightly on hover */
+}
+
+#about {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+    height: 600px;
+}
+
+.about-left {
+    background-color: var(--colorWhite);
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-left img {
+    position: relative;
+    left: 30px;
+    transform: rotateX(-10deg) rotateY(-20deg);
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    perspective: 1000px;
+    width: 450px;
+    background-color: #03C03C;
+}
+
+.about-container:hover .about-left img {
+    transform: rotateX(0deg) rotateY(0deg);
+}
+
+.about-right {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 30px;
+    background-color: var(--colorWhite);
+    text-align: center;
+}
+
+.about-right h2 {
+    position: relative;
+    top: -20px;
+    text-align: left;
+    z-index: 10;
+    font-size: 40px;
+    font-family: var(--font-secondary);
+}
+
+.about-right p {
+    position: relative;
+    top: -20px;
+    text-align: left;
+    z-index: 10;
+    font-family: var(--font-secondary);
+    font-size: 17px;
+}
+
+.about-right-text {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    top: 80px;
+    left: -30px;
+    transition: 0.5s;
+}
+
+#contact {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contact-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    /* Space between columns */
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contact-left {
+   width: 100%;
+}
+
+.contact-right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s ease-in-out;
+}
+
+.contact-container h2 {
+    font-size: 40px;
+    font-family: var(--font-secondary);
+}
+
+
+
+.contact-left h3,
+.contact-right h3 {
+    font-family: var(--font-secondary);
+    margin-top: 0;
+    color: #333;
+}
+
+.contact-left p,
+.contact-right p {
+    color: #666;
+
+    font-family: var(--font-secondary);
+}
+
+.socmed {
+    margin-top: 20px;
+    /*text-align: center;*/
+}
+
+.socmed p {
+    margin: 0 0 15px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+
+.socmed ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /*justify-content: center;*/
+    gap: 30px;
+}
+
+.socmed li {
+    margin: 0;
+}
+
+.socmed a {
+    text-decoration: none;
+    color: var(--colorOnblack);
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.socmed a:hover {
+    color: var(--colororange);
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+}
+
+.contact-info h3 {
+    color: #444;
+
+}
+
+.contact-info p,
+.contact-info a {
+    color: #666;
+    font-family: var(--font-secondary);
+    text-decoration: none;
+}
+
+.info-right a {
+    display: block;
+    /* Makes each link occupy a new line */
+    text-decoration: none;
+    color: #666;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.info-right a:hover {
+    color: var(--colororange);
+}
+
+.getintouch {
+    transition: 1s ease-in-out;
+    max-width: 450px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.getintouch h3 {
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.getintouch p {
+    margin: 0 0 15px;
+    color: #666;
+}
+
+.name-group {
+    display: flex;
+    gap: 5px;
+}
+
+.getintouch .name {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    margin-bottom: 15px;
+    font-family: var(--font-secondary);
+}
+
+.getintouch input[type="email"],
+.getintouch input[type="number"],
+.getintouch .helping {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-family: var(--font-secondary);
+}
+
+.getintouch .helping {
+    border-radius: 10px;
+    font-family: var(--font-secondary);
+    height: 80px;
+    resize: none;
+    /* Prevents resizing */
+}
+
+.getintouch button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background-color: var(--colordarkbrown);
+    color: #ffffff;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: var(--font-secondary);
+    transition: background-color 0.3s ease;
+}
+
+.getintouch button:hover {
+    background-color: var(--colororange);
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-size: 15px;
+    width: 100%;
+    background-color: var(--colordarkbrown);
+    color: var(--colorWhite);
+    font-family: var(--font-secondary);
+}
+
+@media (min-width: 0px) and (max-width: 600px) {
+    #home {
+        overflow: hidden;
+        height: 120vh;
+    }
+
+    nav {
+        height: 50px;
+        width: 100%;
+        position: fixed;
+        top: 0px;
+        z-index: 1000;
+        transition: 0.5s ease;
+    }
+
+    .checkbtn {
+        display: block;
+    }
+
+    .btn-shop {
+        display: block;
+
+    }
+
+    .logo {
+        margin-left: 10px;
+    }
+
+    .escapebtn {
+        padding: 10px 15px;
+        margin: 15px 45px;
+        transition: 0.5s ease-in-out;
+    }
+
+    .escapebtn:hover {
+        transform: rotate(360deg);
+    }
+
+    .button-sign {
+        left: 76px;
+        top: -25px;
+        position: relative;
+    }
+
+    .button-login {
+        top: 10px;
+        position: relative;
+    }
+
+    .ul-nav {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        box-shadow: 1px 1px 20px whitesmoke;
+        background-color: var(--colorOnwhite);
+        top: 0px;
+        left: 100%;
+        text-align: left;
+        transition: all .5s ease-in;
+        border: 0.5px solid rgb(209, 209, 209);
+        border-radius: 10px;
+        z-index: 999;
+    }
+
+    nav .ul-nav li {
+        display: block;
+        margin: 10px 10px;
+    }
+
+    nav .ul-nav li a {
+        font-size: 16px;
+    }
+
+    .responsive {
+        left: 20px;
+    }
+
+    .menu-icon {
+        display: inline-block;
+        padding: 10px 10px;
+    }
+
+    #home {
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home-container {
+        position: relative;
+        top: -50px;
+        text-align: center;
+        width: 80%;
+        height: auto;
+    }
+
+    .home-container h1 {
+        font-size: 80px;
+        font-family: var(--font-primary);
+    }
+
+    .home-container p {
+        position: relative;
+        top: 20px;
+        text-align: center;
+        font-size: 15px;
+        font-family: var(--font-secondary);
+    }
+
+    .btn-order {
+        position: relative;
+        top: 50px;
+        font-size: 15px;
+        border-radius: 50px;
+        font-family: var(--font-secondary);
+        padding: 10px 25px;
+        font-weight: 500;
+        background-color: var(--colordarkbrown);
+        color: var(--colorOnwhite);
+    }
+
+
+    .bestSell-conatiner {
+        overflow: hidden;
+        position: relative;
+        height: 320px;
+        width: 100%;
+    }
+
+    .bestSell-conatiner h2 {
+        position: relative;
+        top: 30px;
+        text-align: center;
+        z-index: 10;
+        font-family: var(--font-secondary);
+        font-size: 25px;
+        font-weight: 500;
+    }
+
+    .slide-item p {
+        font-family: var(--font-secondary);
+        font-size: 15px;
+    }
+
+    /* Main Slider */
+    .slider {
+        position: relative;
+        top: 70px;
+        display: flex;
+        flex-wrap: nowrap;
+        width: max-content;
+        perspective: 100px;
+        animation: moving 30s linear infinite;
+        animation-play-state: running;
+        /* Ensures it starts animating */
+    }
+
+    .slider:hover {
+        animation-play-state: paused;
+        /* Pauses animation on hover */
+    }
+
+    /* Animation Keyframes */
+    @keyframes moving {
+        0% {
+            transform: translateX(300px);
+        }
+
+        100% {
+            transform: translateX(calc(-220px * 9));
+            /* Adjust as needed */
+        }
+    }
+
+    .slide-item {
+        text-align: center;
+        width: 200px;
+        transition: transform 0.3s ease;
+        /* Smooth transition on hover */
+    }
+
+    .slide-item p {
+        font-family: var(--font-secondary);
+    }
+
+
+    /* Slide item and hover effect */
+    .slide-item img {
+        position: relative;
+        margin: 0 auto;
+        width: 100px;
+        z-index: 5;
+
+    }
+
+    #about {
+        top: -50px;
+        width: 100%;
+        height: 140vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .about-container {
+        position: relative;
+        top: 50px;
+        z-index: 100;
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        height: 800px;
+        margin: 0 auto;
+    }
+
+    .about-left img {
+        position: relative;
+        top: 40px;
+        border-radius: 5px;
+        left: 0px;
+        transform: rotateX(0deg) rotateY(0deg);
+        transform-style: preserve-3d;
+        transition: 0.5s;
+        perspective: 1000px;
+        width: 90%;
+    }
+
+    .about-right-text {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 10px;
+        border-radius: 5px;
+        position: relative;
+        top: -140px;
+        left: 0px;
+        transition: 0.5s;
+    }
+
+    .about-right h2 {
+        text-align: left;
+        top: 5px;
+        z-index: 10;
+        font-family: var(--font-secondary);
+        font-size: 30px;
+    }
+
+    .about-right p {
+        text-align: left;
+        z-index: 10;
+        top: 5px;
+        font-family: var(--font-secondary);
+        font-size: 15px;
+    }
+
+    .about-right {
+        height: 370px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding: 30px;
+        background-color: var(--colorWhite);
+        text-align: center;
+    }
+
+    #contact {
+        position: relative;
+        top: -50px;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-container {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        /* Space between columns */
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+        height: 500px;
+        top: 10px;
+    }
+
+    .contact-left{
+        position: relative;
+        top: 00px;
+        width: 100%;
+        height: 1100px;
+        padding: 10px;
+    }
+
+    .contact-right{
+        position: relative;
+        top: -830px;
+        
+    }
+
+    .contact-info {
+        display: block;
+        position: absolute;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 20px auto;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .contact-info h3 {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    .contact-info p,
+    .contact-info a {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .info-right a {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .info-right a:hover {
+        color: var(--colororange);
+    }
+
+    .getintouch {
+        max-width: 100%;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: none;
+        margin: 10px auto;
+    }
+
+    .getintouch h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .getintouch p {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .name-group {
+        display: block;
+    }
+
+    .getintouch .name {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .getintouch input[type="email"],
+    .getintouch input[type="number"]{
+        padding: 10px;
+        border-radius: 50px;
+    }
+
+    .getintouch button {
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 16px;
+    }
+
+    #footer {
+        position: relative;
+        top: 530px;
+        font-size: 13px;
+        padding: 10px 15px;
+        height: auto;
+    }
+
+}

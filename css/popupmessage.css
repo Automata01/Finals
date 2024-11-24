@@ -1,0 +1,112 @@
+/******************************Set Variable******************************/
+:root {
+    /*Font Style*/
+    --font-primary: "Grand Hotel", cursive;
+    ;
+    --font-secondary: "Poppins", sans-serif;
+
+    /*Colors*/
+    --colorbrown: #a84d14;
+    --coloryellow: #e9d66b;
+
+    --colororange: #e4681b;
+    --colordarkbrown: #72340d;
+
+    --colorcream: #f2e6a6;
+    --cologoldblack: #6f6111;
+
+    --colorError: #DC343B;
+    --colorCorrect: #03C03C;
+
+    --colorOnblack: #343a3d;
+    --colorOnwhite: whitesmoke;
+
+    --colorBlack: black;
+    --colorWhite: white;
+}
+
+#checkMessage{
+    position: fixed;
+    transition: 0.5s ease-in-out;
+    display: none;
+    z-index: 5000;
+    width: 100%;
+    height: 100vh;
+    font-family: var(--font-secondary);
+    text-align: center;
+} 
+
+#sentMessage{
+   width: 100%;
+   text-align: center;
+}
+
+#sentMessage p{
+    transition: 1s ease-in-out;
+    position: relative;
+    top: 20px;
+    padding: 12px;
+    color: whitesmoke;
+    display: block;
+    width: 400px;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: var(--colorCorrect);
+}
+
+.check-p{
+    color: whitesmoke;
+    padding: 12px;
+    margin: 10px auto;
+    width: 400px;
+    border-radius: 5px;
+    background-color: var(--colorCorrect);
+}
+
+@media (min-width: 0px) and (max-width: 600px){
+    .errorModal-content {
+        background-color: var(--colorError); /* Red background to indicate error */
+        margin: 1% auto; /* Center it */
+        width: 80%; /* Could be more or less depending on screen size */
+        width: 90%;
+        font-size: 12px;
+        color:var(--colorOnwhite);
+        font-family: var(--font-secondary);
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .error-close-btn {
+        color: #fff;
+        position: relative;
+        top: -10px;
+        left: 5px;
+        float: right;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    #checkMessage{
+        position: fixed;
+        transition: 0.5s ease-in-out;
+        display: none;
+        font-size: 12px;
+        z-index: 5000;
+        width: 100%;
+        height: 100vh;
+        font-family: var(--font-secondary);
+        text-align: center;
+    } 
+
+    .check-p{
+        color: whitesmoke;
+        padding: 12px;
+        margin: 10px auto;
+        width: 300px;
+        border-radius: 5px;
+        background-color: var(--colorCorrect);
+    }
+
+    
+}
